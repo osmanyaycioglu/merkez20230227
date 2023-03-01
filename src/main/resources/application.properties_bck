@@ -1,0 +1,12 @@
+server.port=8090
+management.endpoints.web.exposure.include=*
+
+app.xyz.language=esp
+
+spring.profiles.default=english
+spring.profiles.active=turkish
+
+my.app.name=training
+my.app.version=1.9.0
+my.app.build=23
+my.app.city=istanbul

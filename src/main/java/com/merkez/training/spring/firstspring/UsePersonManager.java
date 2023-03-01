@@ -1,5 +1,6 @@
 package com.merkez.training.spring.firstspring;
 
+import com.merkez.training.spring.firstspring.properties.AppProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;
@@ -16,7 +17,7 @@ public class UsePersonManager implements ApplicationRunner {
     private PersonManager personManager;
     // @Value("${app.xyz.language}")
     private String language;
-
+    private AppProperties appProperties;
 //    public UsePersonManager() {
 //    }
 
@@ -24,9 +25,11 @@ public class UsePersonManager implements ApplicationRunner {
     public UsePersonManager(PersonManager personManagerParam,
                             @Value("${app.xyz.language}") String languageParam,
                             Environment environmentParam,
-                            ApplicationContext contextParam) {
+                            ApplicationContext contextParam,
+                            AppProperties appPropertiesParam) {
         personManager = personManagerParam;
         language = languageParam;
+        appProperties = appPropertiesParam;
         Person person = new Person();
         person.setUsername("user2");
         person.setFirstName("Mehmet");
@@ -44,6 +47,7 @@ public class UsePersonManager implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        System.out.println(appProperties);
         sayHelloToAll();
     }
 }

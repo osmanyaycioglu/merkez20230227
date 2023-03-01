@@ -3,10 +3,14 @@ package com.merkez.training.spring.firstspring;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ConfigurableApplicationContext;
 
 // @SpringBootApplication(scanBasePackages = {"com.merkez.training.spring.firstspring","a.b.c"})
 @SpringBootApplication
+@EnableConfigurationProperties
+@ConfigurationPropertiesScan
 public class FirstSpringApplication {
 
 

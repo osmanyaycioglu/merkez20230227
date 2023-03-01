@@ -1,0 +1,58 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+my:
+  app:
+    name: training
+    version: 1.9.0
+    build: '23'
+    city: istanbul
+    street: ataşehir
+    country: Turkey
+    owner:
+      firstName: osman
+      lastName: yaycıoğlu
+      age: 53
+      username: osmany
+    other-names:
+      - merkez
+      - train
+      - training
+    person-list:
+      - first-name: ali
+        last-name: veli
+        age: 51
+        username: aliv
+      - firstName: mehmet
+        lastName: kula
+        age: 45
+        username: mehku
+      - first_name: tahsin
+        last_name: alaz
+        age: 23
+        username: tahsina
+    person-map:
+      aliveli:
+        first-name: ali
+        last-name: veli
+        age: 33
+        username: alive
+      osmanyay:
+        first-name: osman
+        last-name: yay
+        age: 53
+        username: ostyay
+
+server:
+  port: '8090'
+  http2:
+    enabled: false
+app:
+  xyz:
+    language: esp
+spring:
+  profiles:
+    default: english
+    active: turkish
