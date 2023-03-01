@@ -1,4 +1,4 @@
-package com.merkez.training.spring.firstspring.properties;
+package com.merkez.training.spring.firstspring.di.configuration.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

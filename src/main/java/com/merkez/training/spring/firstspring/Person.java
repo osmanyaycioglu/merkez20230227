@@ -1,5 +1,7 @@
 package com.merkez.training.spring.firstspring;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 // POJO
 // DTO
 // @Data

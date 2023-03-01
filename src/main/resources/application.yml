@@ -44,7 +44,6 @@ my:
         last-name: yay
         age: 53
         username: ostyay
-
 server:
   port: '8090'
   http2:
