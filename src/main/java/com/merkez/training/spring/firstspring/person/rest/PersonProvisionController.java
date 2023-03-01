@@ -1,14 +1,23 @@
 package com.merkez.training.spring.firstspring.person.rest;
 
 import com.merkez.training.spring.firstspring.Person;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 
 @RestController
 @RequestMapping("/api/v1/person/provision")
+@Validated
 public class PersonProvisionController {
 
     @PostMapping("/add")
-    public String add(@RequestBody Person personParam){
+    public String add(@Valid @RequestBody Person personParam){
+        if (personParam.getFirstName().contains("abc")){
+            throw new IllegalArgumentException("abc barıdıramaz");
+        }
         return "OK";
     }
 
@@ -18,7 +27,7 @@ public class PersonProvisionController {
     }
 
     @GetMapping("/deactivate")
-    public String deactivate(@RequestParam("pid") Long personId){
+    public String deactivate(@Max(100) @RequestParam("pid") Long personId){
         return "OK";
     }
 

@@ -2,24 +2,34 @@ package com.merkez.training.spring.firstspring;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.*;
+
 // POJO
 // DTO
 // @Data
 public class Person {
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    @Size(min = 3,max = 20,message = "firstName {min} ile {max} arasında olmalı")
     private String firstName;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    @Size(min = 2,max = 25)
     private String lastName;
+    @Min(10)
+    @Max(100)
     private int age;
+    @NotNull
+    @NotEmpty
+    @NotBlank
+    @Size(min = 6,max = 20)
     private String username;
-
-    public Person(String firstName,
-                  String lastName,
-                  int age,
-                  String username) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.username = username;
-    }
+    @NotNull
+    @NotEmpty
+    @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$",message = "En az 8 karakter ve bir rakam olmalı")
+    private String password;
 
     public Person() {
     }
@@ -66,5 +76,13 @@ public class Person {
                + ", username="
                + this.getUsername()
                + ")";
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String passwordParam) {
+        password = passwordParam;
     }
 }

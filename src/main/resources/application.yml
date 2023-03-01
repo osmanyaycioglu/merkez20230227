@@ -48,6 +48,10 @@ server:
   port: '8090'
   http2:
     enabled: false
+  error:
+    include-binding-errors: always
+    include-message: always
+    include-exception: true
 app:
   xyz:
     language: esp
