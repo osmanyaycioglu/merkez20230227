@@ -4,15 +4,22 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.persistence.*;
+
 @Getter
 @Setter
+@Entity
+@Table(name = "person")
 public class PersonDTO {
+    @Id
+    @GeneratedValue
     private Long personId;
     private String firstName;
     private String lastName;
     private int age;
     private String username;
     private String password;
-    private EPersonStatus personStatus;
+    @Enumerated(EnumType.STRING)
+    private EPersonStatus personStatus = EPersonStatus.ACTIVE;
 
 }

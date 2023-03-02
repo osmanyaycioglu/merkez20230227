@@ -31,23 +31,21 @@ public class PersonProvisionController {
         return "OK";
     }
 
-    @PostMapping("/addx")
-    public String addX(@RequestBody Person personParam){
-        return "OK";
-    }
-
     @GetMapping("/deactivate")
-    public String deactivate(@Max(100) @RequestParam("pid") Long personId){
+    public String deactivate(@RequestParam("pid") Long personId){
+        personProvisionService.deactivate(personId);
         return "OK";
     }
 
     @GetMapping("/activate")
     public String activate(@RequestParam("pid") Long personId){
+        personProvisionService.activate(personId);
         return "OK";
     }
 
     @GetMapping("/suspend")
     public String suspend(@RequestParam("pid") Long personId){
+        personProvisionService.suspend(personId);
         return "OK";
     }
 
