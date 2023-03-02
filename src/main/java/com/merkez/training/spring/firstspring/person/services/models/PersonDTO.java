@@ -1,8 +1,11 @@
 package com.merkez.training.spring.firstspring.person.services.models;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class PersonDTO {
     private Long personId;
     private String firstName;

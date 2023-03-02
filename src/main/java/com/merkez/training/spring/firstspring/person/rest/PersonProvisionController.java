@@ -1,5 +1,6 @@
 package com.merkez.training.spring.firstspring.person.rest;
 
+import com.merkez.training.spring.firstspring.person.rest.mappers.IPersonMapper;
 import com.merkez.training.spring.firstspring.person.rest.models.Person;
 import com.merkez.training.spring.firstspring.person.services.PersonProvisionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class PersonProvisionController {
         if (personParam.getFirstName().contains("abc")){
             throw new IllegalArgumentException("abc barıdıramaz");
         }
-        personProvisionService.add();
+        personProvisionService.add(IPersonMapper.mapper.toPersonDTO(personParam));
         return "OK";
     }
 
