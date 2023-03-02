@@ -1,6 +1,6 @@
 package com.merkez.training.spring.firstspring.rest;
 
-import com.merkez.training.spring.firstspring.Person;
+import com.merkez.training.spring.firstspring.person.rest.models.Person;
 import com.merkez.training.spring.firstspring.di.IHello;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

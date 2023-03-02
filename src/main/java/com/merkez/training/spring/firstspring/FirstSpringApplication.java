@@ -1,6 +1,6 @@
 package com.merkez.training.spring.firstspring;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.merkez.training.spring.firstspring.person.rest.models.Person;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;

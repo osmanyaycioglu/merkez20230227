@@ -1,6 +1,6 @@
 package com.merkez.training.spring.firstspring.person.rest;
 
-import com.merkez.training.spring.firstspring.Person;
+import com.merkez.training.spring.firstspring.person.rest.models.Person;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

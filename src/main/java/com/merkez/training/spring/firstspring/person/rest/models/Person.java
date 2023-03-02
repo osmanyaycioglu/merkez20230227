@@ -1,7 +1,8 @@
-package com.merkez.training.spring.firstspring;
+package com.merkez.training.spring.firstspring.person.rest.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.merkez.training.spring.firstspring.validation.ContainsStr;
+import com.merkez.training.spring.firstspring.validation.StartWith;
 
 import javax.validation.constraints.*;
 
@@ -29,6 +30,7 @@ public class Person {
     @NotBlank
     @Size(min = 6,max = 20)
     @ContainsStr({"abc","qwe","asd"})
+    @StartWith(xyz = {"us","ku"},count = 2)
     private String username;
     @NotNull
     @NotEmpty

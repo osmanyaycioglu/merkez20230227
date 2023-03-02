@@ -1,6 +1,6 @@
 package com.merkez.training.spring.firstspring.validation;
 
-import com.merkez.training.spring.firstspring.Person;
+import com.merkez.training.spring.firstspring.person.rest.models.Person;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

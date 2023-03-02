@@ -1,6 +1,7 @@
 package com.merkez.training.spring.firstspring;
 
 import com.merkez.training.spring.firstspring.di.configuration.properties.AppProperties;
+import com.merkez.training.spring.firstspring.person.rest.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.ApplicationArguments;

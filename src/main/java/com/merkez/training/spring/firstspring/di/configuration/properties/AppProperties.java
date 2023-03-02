@@ -3,7 +3,7 @@ package com.merkez.training.spring.firstspring.di.configuration.properties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-import com.merkez.training.spring.firstspring.Person;
+import com.merkez.training.spring.firstspring.person.rest.models.Person;
 
 import java.util.List;
 import java.util.Map;

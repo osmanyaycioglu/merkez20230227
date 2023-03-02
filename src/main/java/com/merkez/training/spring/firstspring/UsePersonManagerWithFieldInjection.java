@@ -1,8 +1,7 @@
 package com.merkez.training.spring.firstspring;
 
+import com.merkez.training.spring.firstspring.person.rest.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationArguments;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
