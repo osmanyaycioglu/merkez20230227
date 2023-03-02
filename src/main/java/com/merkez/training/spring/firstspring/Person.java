@@ -1,17 +1,20 @@
 package com.merkez.training.spring.firstspring;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.merkez.training.spring.firstspring.validation.ContainsStr;
 
 import javax.validation.constraints.*;
 
 // POJO
 // DTO
 // @Data
+@ContainsStr({"deneme","ali","joe"})
 public class Person {
     @NotNull
     @NotEmpty
     @NotBlank
     @Size(min = 3,max = 20,message = "firstName {min} ile {max} arasında olmalı")
+    @ContainsStr({"abc","qwe","asd"})
     private String firstName;
     @NotNull
     @NotEmpty
@@ -25,10 +28,12 @@ public class Person {
     @NotEmpty
     @NotBlank
     @Size(min = 6,max = 20)
+    @ContainsStr({"abc","qwe","asd"})
     private String username;
     @NotNull
     @NotEmpty
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$",message = "En az 8 karakter ve bir rakam olmalı")
+    @ContainsStr(value = {"abc","123","1234","12345","qwerty"})
     private String password;
 
     public Person() {
