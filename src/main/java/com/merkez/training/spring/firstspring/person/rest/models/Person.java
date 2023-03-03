@@ -6,6 +6,7 @@ import com.merkez.training.spring.firstspring.validation.StartWith;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;
+import java.util.List;
 
 // POJO
 // DTO
@@ -42,6 +43,10 @@ public class Person {
     @NotNull
     @Valid
     private Address address;
+    @NotNull
+    @Size(min = 1)
+    @Valid
+    private List<Phone> phones;
 
     public Person() {
     }
@@ -104,5 +109,13 @@ public class Person {
 
     public void setAddress(Address addressParam) {
         address = addressParam;
+    }
+
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phonesParam) {
+        phones = phonesParam;
     }
 }

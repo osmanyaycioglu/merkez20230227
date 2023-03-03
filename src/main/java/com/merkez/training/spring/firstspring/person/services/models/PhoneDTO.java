@@ -6,21 +6,18 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 @Getter
 @Setter
 @Entity
-@Table(name = "person_address")
-public class AddressDTO {
+@SequenceGenerator(name = "phone_seq",sequenceName = "phone_seq",initialValue = 1,allocationSize = 1)
+public class PhoneDTO {
     @Id
-    @GeneratedValue
-    private Long addId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "phone_seq")
+    private Long phoneId;
     @NotNull
     @NotEmpty
-    @Size(min = 2,max = 18)
-    private String city;
+    private String name;
     @NotNull
     @NotEmpty
-    private String street;
+    private String number;
 }

@@ -8,6 +8,8 @@ import org.hibernate.annotations.FetchMode;
 import org.springframework.data.jpa.repository.EntityGraph;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -27,4 +29,7 @@ public class PersonDTO {
 
     @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private AddressDTO address;
+
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private Set<PhoneDTO> phones;
 }
