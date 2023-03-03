@@ -12,7 +12,7 @@ import java.util.Map;
 @ConfigurationProperties("my.app")
 public class AppProperties {
 
-    private String              name ="app";
+    private String              name = "app";
     private String              version;
     private Integer             build;
     private String              city;
@@ -22,6 +22,7 @@ public class AppProperties {
     private List<String>        otherNames;
     private List<Person>        personList;
     private Map<String, Person> personMap;
+    private String              taskCron;
 
     public String getName() {
         return this.name;
@@ -118,5 +119,13 @@ public class AppProperties {
                ",\n personList=" + personList +
                ",\n personMap=" + personMap +
                '}';
+    }
+
+    public String getTaskCron() {
+        return taskCron;
+    }
+
+    public void setTaskCron(String taskCronParam) {
+        taskCron = taskCronParam;
     }
 }

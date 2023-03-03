@@ -15,7 +15,7 @@ import java.time.LocalDate;
 public class SecondRest {
 
     @Autowired
-    @Qualifier("tr-gr")
+    @Qualifier("helloTr")
     private IHello hello;
 
     @Autowired
