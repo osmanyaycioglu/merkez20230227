@@ -1,6 +1,8 @@
 package com.merkez.training.spring.firstspring.person.rest.mappers;
 
+import com.merkez.training.spring.firstspring.person.rest.models.Address;
 import com.merkez.training.spring.firstspring.person.rest.models.Person;
+import com.merkez.training.spring.firstspring.person.services.models.AddressDTO;
 import com.merkez.training.spring.firstspring.person.services.models.PersonDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -20,5 +22,8 @@ public interface IPersonMapper {
 
     List<Person> toPersons(List<PersonDTO> person);
 
+    AddressDTO toAddressDTO(Address addressParam);
+
+    Address toAddress(AddressDTO addressParam);
 
 }

@@ -3,6 +3,9 @@ package com.merkez.training.spring.firstspring.person.services.models;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.springframework.data.jpa.repository.EntityGraph;
 
 import javax.persistence.*;
 
@@ -22,4 +25,6 @@ public class PersonDTO {
     @Enumerated(EnumType.STRING)
     private EPersonStatus personStatus = EPersonStatus.ACTIVE;
 
+    @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private AddressDTO address;
 }

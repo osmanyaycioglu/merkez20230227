@@ -37,6 +37,11 @@ public class PersonDataServiceEntityManager {
 
     @Transactional
     public void insertJTA(PersonDTO personDTOParam) {
+        boolean contains = entityManager.contains(personDTOParam);
+        if (!contains){
+            PersonDTO merge = entityManager.merge(personDTOParam);
+            merge.getAddress();
+        }
         entityManager.joinTransaction();
         entityManager.persist(personDTOParam);
     }

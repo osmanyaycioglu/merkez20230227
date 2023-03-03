@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.merkez.training.spring.firstspring.validation.ContainsStr;
 import com.merkez.training.spring.firstspring.validation.StartWith;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 
 // POJO
@@ -37,6 +38,10 @@ public class Person {
     @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$",message = "En az 8 karakter ve bir rakam olmalı")
     @ContainsStr(value = {"abc","123","1234","12345","qwerty"})
     private String password;
+
+    @NotNull
+    @Valid
+    private Address address;
 
     public Person() {
     }
@@ -91,5 +96,13 @@ public class Person {
 
     public void setPassword(String passwordParam) {
         password = passwordParam;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address addressParam) {
+        address = addressParam;
     }
 }

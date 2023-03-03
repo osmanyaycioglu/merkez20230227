@@ -3,6 +3,7 @@ package com.merkez.training.spring.firstspring.person.rest;
 import com.merkez.training.spring.firstspring.person.rest.mappers.IPersonMapper;
 import com.merkez.training.spring.firstspring.person.rest.models.Person;
 import com.merkez.training.spring.firstspring.person.services.PersonProvisionService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ public class PersonProvisionController {
         personProvisionService = personProvisionServiceParam;
     }
 
+    @Operation(summary = "yeni kişi ekleme",description = "sisteme yeni kişi eklemek için kullanılır...")
     @PostMapping("/add")
     public String add(@Valid @RequestBody Person personParam){
         if (personParam.getFirstName().contains("abc")){
