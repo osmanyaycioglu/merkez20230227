@@ -1,0 +1,129 @@
+HelloWorld
+    String hello(String name)
+SpringBean olarak declare et
+ve main method da kullan.
+
+
+ICalculate
+    calculate int int
+Add -> class
+Subs -> class
+
+Calculator
+    ICalculate inject
+    calculate
+        ICalculate calculate System.out.println yazdır
+
+CalculatorRunner implements CommandLineRunner
+Calculator inject et
+run
+    burada kullan
+
+CalculatorRest
+    ICalculate addOp; -> inject et
+    ICalculate subsOp; -> inject et
+    String add(Integer,Integer)
+    String subs(Integer,Integer)
+
+    0533 436 7124
+
+IATMOperation
+    String execute(Integer amount)
+DepositATMOperation
+WithdrawATMOperation
+ATMOperationController
+    deposit
+    withdraw
+@Configuration Bean ile yapılsın
+
+---Lab4----
+Phone
+    name
+    type
+    number
+
+@ConfigurationProperties("yyy")
+PhoneConfigurations
+    String defaultCity
+    String defaultPhonePrefix
+    Phone defaultPhone
+    List<Phone> allPhones;
+
+
+PhoneConfigurationController -> /phone
+    @GetMapping("/conf")
+    PhoneConfigurations getPhoneConfiguration()
+
+---ODEV2----
+Customer -> validation koy
+    name
+    surname
+    height
+    weight
+    LocalDate birthdate
+    EStatus customerStatus -> ACTIVE,SUSPEND,DELETED
+
+CustomerProvisionController -> CustomerProvisionService inject et kullan
+    Long add -> Customer
+    suspend -> CustomerId
+    remove -> CustomerId
+    activate -> CustomerId
+CustomerQueryController -> CustomerQueryService inject et ve kullan
+    getOne
+    getBySurname
+    getAll
+
+CustomerProvisionService
+    Map<Long,Customer> customerMap;
+    add
+    suspend
+    remove
+    activate
+CustomerQueryService -> CustomerProvisionService inject et kullan
+    findCustomer
+    findCustomerBySurname
+    findAll
+
+---Lab5----
+@StartWith
+    String[] -> bilgisi al
+Bir string in buradaki stringlerle başlayıp başlamadığını validate edecek.
+
+---ODEV3----
+CustomerDTO
+    customerId
+    name
+    surname
+    height
+    weight
+    LocalDate birthdate
+    EStatus customerStatus -> ACTIVE,SUSPEND,DELETED
+Mapstruct ile Customer Mapping işlemlerini yap.
+CustomerDataService yaz CustomerProvisionService, CustomerQueryService de bunu kullan.
+    ICustomerDao
+
+ ---ODEV4----
+ Customer -> Eklenecekler
+    String tckn;
+    CustomerDetails customerDetails;
+    Set<Phone> phones;
+
+ CustomerDetails
+    tckn
+    address
+    mernis
+    credit
+
+ Phone
+    name
+    number
+
+ CustomerAudit
+    customerOperation
+    customerInfo
+
+ * Hepsi entity olacak
+ * Customer -> add işleminde CustomerAudit yazılacak sonra
+    rest call yapılacak (yapmayabilirsiniz)
+    ve CustomerDetails alınacak. Sonrasında bütün data database de commit olacak.(@Transaction ile trans ı yönet)
+ * Her entity kendi sequence i ile çalışacak.
