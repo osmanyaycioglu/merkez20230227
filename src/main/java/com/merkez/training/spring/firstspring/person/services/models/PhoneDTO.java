@@ -10,6 +10,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @Entity
 @SequenceGenerator(name = "phone_seq",sequenceName = "phone_seq",initialValue = 1,allocationSize = 1)
+@Table(name = "phone")
 public class PhoneDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "phone_seq")
@@ -20,4 +21,7 @@ public class PhoneDTO {
     @NotNull
     @NotEmpty
     private String number;
+
+    @ManyToOne
+    private PersonDTO personDTO;
 }

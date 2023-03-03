@@ -3,6 +3,7 @@ package com.merkez.training.spring.firstspring.person.services.models;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -13,6 +14,7 @@ import java.util.Set;
 
 @Getter
 @Setter
+@ToString
 @Entity
 @Table(name = "person")
 public class PersonDTO {
@@ -30,6 +32,9 @@ public class PersonDTO {
     @OneToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private AddressDTO address;
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL,mappedBy = "personDTO")
     private Set<PhoneDTO> phones;
+
+    @Version
+    private Integer itemVersion;
 }
